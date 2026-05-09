@@ -9,6 +9,7 @@ MCP Gateway is a CLI tool designed to connect AI models (OpenAI-compatible) to M
 ### Installation
 
 Ensure you have Bun installed, then install the dependencies:
+
 ```bash
 bun install
 ```
@@ -16,6 +17,7 @@ bun install
 ### Running the CLI
 
 You can run the gateway using the following command:
+
 ```bash
 bun mcp.js --mcp <MCP_SERVER_URL>
 ```
@@ -23,6 +25,7 @@ bun mcp.js --mcp <MCP_SERVER_URL>
 ### Options
 
 The CLI supports several arguments to configure the connection:
+
 - `--mcp`: URL of the MCP server (required).
 - `--model`: Name of the model to use (default: gpt-4o).
 - `--apikey`: API key for the model provider (default: ollama).
@@ -35,3 +38,19 @@ Alternatively, you can configure the tool using a `.env` file:
 - `OPENAI_MODEL`: Default model name.
 - `OPENAI_API_KEY`: API key for the model provider.
 - `OPENAI_BASE_URL`: Base URL for the model provider API.
+
+## Docker
+
+You can run MCP Gateway using Docker without installing Bun locally:
+
+```bash
+docker run -it --rm ghcr.io/tkjskanesga/mcp-gateway --mcp <MCP_SERVER_URL> --apikey <API_KEY>
+```
+
+### Building Locally
+
+```bash
+docker build -t mcp-gateway .
+docker run -it --rm mcp-gateway --mcp <MCP_SERVER_URL>
+```
+
