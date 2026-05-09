@@ -1,5 +1,7 @@
+.github/workflows
 node_modules
 .git
 .env
-bun.lock
+.env*
 *.log
+README.md
